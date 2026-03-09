@@ -9,6 +9,16 @@ const Paste = () => {
   const [searchTerm, setSearchTerm] = useState("");
   const dispatch = useDispatch();
 
+  const formatDate = (date) => {
+    return new Date(date).toLocaleDateString("en-US", {
+      year: "numeric",
+      month: "long",
+      day: "numeric",
+      hour: "2-digit",
+      minute: "2-digit",
+    });
+  };
+
   console.log(pastes);
 
   const filteredData = pastes.filter((paste) =>
@@ -108,7 +118,9 @@ const Paste = () => {
               </div>
 
               {/* Date */}
-              <div className="text-lg text-gray-500">{paste.createdAt}</div>
+              <div className="text-lg text-gray-500">
+                {formatDate(paste.createdAt)}
+              </div>
             </div>
           ))}
       </div>
