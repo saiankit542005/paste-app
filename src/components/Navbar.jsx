@@ -22,7 +22,7 @@ const Navbar = () => {
           }`
         }
       >
-        Paste
+        Pastes
       </NavLink>
     </div>
   );
